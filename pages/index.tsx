@@ -1,58 +1,17 @@
-import { Button, HTag, Paragraph, Tag } from '../components';
+import { Rating, Tag } from '../components';
+import { useState } from 'react';
 
 export default function Home(): JSX.Element {
+    const [rating, setRating] = useState<number>(4);
+
     return (
         <div>
-            <HTag tag="h1">Test</HTag>
-            <HTag tag="h2">Test</HTag>
-            <HTag tag="h3">Test</HTag>
-            <Button appearance="ghost" arrow="right">
-                Test
-            </Button>
-            <Button appearance="primary" arrow="down">
-                Test
-            </Button>
-            <Button appearance="primary" arrow="right">
-                Test
-            </Button>
-            <Paragraph size="small">
-                lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias, amet aspernatur at eum
-                fugiat id ipsam iste libero maxime mollitia obcaecati, optio perferendis quaerat recusandae
-                reprehenderit similique voluptatibus.
-            </Paragraph>
-
-            <Paragraph size="medium">
-                lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias, amet aspernatur at eum
-                fugiat id ipsam iste libero maxime mollitia obcaecati, optio perferendis quaerat recusandae
-                reprehenderit similique voluptatibus.
-            </Paragraph>
-            <Paragraph size="main">
-                lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias, amet aspernatur at eum
-                fugiat id ipsam iste libero maxime mollitia obcaecati, optio perferendis quaerat recusandae
-                reprehenderit similique voluptatibus.
-            </Paragraph>
-            <Tag color={'red'} size={'m'}>
-                test
-            </Tag>
-            <Tag color={'red'} size={'s'}>
-                test
-            </Tag>
-            <Tag color={'gray'} size={'m'}>
-                test
-            </Tag>
             <Tag color={'gray'} size={'s'}>
                 test
             </Tag>
-            <Tag color={'primary'} size={'s'}>
-                test
-            </Tag>
-            <Tag color={'primary'} size={'m'}>
-                test
-            </Tag>
-            <Tag color={'ghost'} size={'s'}>
-                test
-            </Tag>
-            <Tag>test</Tag>
+            <Rating rating={3} isEditable />
+            <Rating rating={2} />
+            <Rating rating={rating} isEditable setRating={setRating} />
         </div>
     );
 }
